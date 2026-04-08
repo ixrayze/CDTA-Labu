@@ -104,15 +104,12 @@ int main() {
 
     int searchCode;
     cout << "\nVvedit kod tehniky dlia vydalennia dochirnih elementiv: ";
-    // 2. ЗАХИСТ ВІД ВВЕДЕННЯ ТЕКСТУ ЗАМІСТЬ ЧИСЛА
-    // (!(cin >> searchCode)) перевіряє, чи успішно зчиталося число.
-    // Якщо ввели літери, функція повертає false, і ми заходимо в цикл очищення.
+
     while (!(cin >> searchCode)) {
         cout << "Pomylka: vvedeno nepravylni dani (litery zamist chysla)!\n";
 
-        cin.clear(); // Розблоковуємо потік вводу
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Викидаємо "сміття"
-
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Vvedit kod tehniky shche raz: ";
     }
 
