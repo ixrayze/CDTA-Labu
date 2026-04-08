@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <limits> // Додано для numeric_limits
+#include <limits>
 
 using namespace std;
 
