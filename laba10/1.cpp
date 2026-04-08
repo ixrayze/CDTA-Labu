@@ -107,7 +107,7 @@ int main() {
     }
     cout << "\nSerednia dovzhyna shliahu (rebra): " << (float) sum / countEdges << '\n';
 
-    cout << "\nIzolovani punkty (zv'iazok lyshe z 1 mistom):\n";
+    cout << "\nIzolovani punkty (zviazok lyshe z 1 mistom):\n";
     int isolatedCount = 0;
     for (int i = 1; i <= 6; i++) {
         int degree = 0;
@@ -164,9 +164,9 @@ int main() {
     }
 
     if (hasPath) {
-        cout << "\nMozhlyvo ob'yihaty vsi punkty po 1 razu (Gamiltoniv shliah).\n";
+        cout << "\nMozhlyvo obyihaty vsi punkty po 1 razu (Gamiltoniv shliah).\n";
     } else {
-        cout << "\nNe mozhlyvo ob'yihaty vsi punkty po 1 razu.\n";
+        cout << "\nNe mozhlyvo obyihaty vsi punkty po 1 razu.\n";
     }
 
     for (int i = 1; i <= 6; i++) {
