@@ -31,6 +31,13 @@ void addNode(CompNode *&r, int c, string n, float p) {
     }
 }
 
+void printTree(CompNode *r) {
+    if (r == 0) return;
+    printTree(r->left);
+    cout << "Kod: " << r->code << " | Nazva: " << r->name << " | Tsina: " << r->price << '\n';
+    printTree(r->right);
+}
+
 void calcAvg(CompNode *r, float &sum, int &count) {
     if (r == 0) return;
     sum += r->price;
@@ -83,6 +90,9 @@ int main() {
     }
     file.close();
 
+    cout << "SPYSOK TOVARIV (DO VYDALENNIA)\n";
+    printTree(root);
+
     float sum = 0;
     int count = 0;
     calcAvg(root, sum, count);
@@ -107,7 +117,6 @@ int main() {
 
     while (!(cin >> searchCode)) {
         cout << "Pomylka: vvedeno nepravylni dani (litery zamist chysla)!\n";
-
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Vvedit kod tehniky shche raz: ";
@@ -115,9 +124,13 @@ int main() {
 
     CompNode *target = findNode(root, searchCode);
     if (target != 0) {
+        // Видаляємо дочірні елементи
         deleteTree(target->left);
         deleteTree(target->right);
-        cout << "Dochirni elementy vydaleno.\n";
+        cout << "\n>>> Dochirni elementy dlia tovaru " << target->name << " vydaleno z pamyati.\n\n";
+
+        cout << "SPYSOK TOVARIV (PISLIA VYDALENNIA)\n";
+        printTree(root);
     } else {
         cout << "Tehniku z takym kodom ne znaydeno.\n";
     }
