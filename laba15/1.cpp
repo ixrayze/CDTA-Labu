@@ -73,10 +73,8 @@ int main() {
 
     vector<int> sizes = {1000, 10000, 100000};
 
-    // 2D array to store results: 4 algorithms x 3 array sizes
     vector<vector<long long>> results(4, vector<long long>(3));
 
-    // Calculate times for each size
     for (size_t s = 0; s < sizes.size(); s++) {
         int n = sizes[s];
         vector<int> original(n);
@@ -90,7 +88,6 @@ int main() {
         results[3][s] = measureTime(gnomeSort, original);
     }
 
-    // Print table header
     cout << "\n";
     cout << "================================================================================\n";
     cout << "             COMPARATIVE ANALYSIS OF SORTING TIME (in ms)\n";
@@ -102,7 +99,6 @@ int main() {
          << setw(15) << "n = 100000" << "\n";
     cout << "--------------------------------------------------------------------------------\n";
 
-    // Print results rows
     cout << left << setw(5) << "1" << setw(25) << "Bubble Sort"
          << right << setw(15) << results[0][0] << setw(15) << results[0][1] << setw(15) << results[0][2] << "\n";
 
