@@ -61,7 +61,7 @@ int main() {
     bool isRunning = true;
     
     while (isRunning) {
-        cout << "\n=== Expedition Backpack Menu ===\n";
+        cout << "\n=== Menu ===\n";
         cout << "1. Calculate Optimal Provisions\n";
         cout << "0. Exit\n";
         cout << "Choice: ";

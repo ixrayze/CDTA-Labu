@@ -83,7 +83,7 @@ int main() {
     bool isRunning = true;
     
     while (isRunning) {
-        cout << "\n=== Activity Selection Menu ===\n";
+        cout << "\n=== Menu ===\n";
         cout << "1. Enter activities and calculate schedule\n";
         cout << "0. Exit\n";
         cout << "Choice: ";

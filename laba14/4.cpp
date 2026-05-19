@@ -42,7 +42,7 @@ int main() {
     start_time = high_resolution_clock::now();
     for (string q: queries) s2.find(q);
     end_time = high_resolution_clock::now();
-    cout << "unordered_set search time: " << duration_cast<microseconds>(end_time - start_time).count() << " mks\n";
+    cout <<  "unordered_set search time: " << duration_cast<microseconds>(end_time - start_time).count() << " mks\n";
 
     return 0;
 }

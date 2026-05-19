@@ -19,7 +19,7 @@ struct Product {
 void printProducts(const vector<Product>& products) {
     cout << left << setw(15) << "Name"
          << setw(10) << "Price"
-         << setw(20) << "P/F/C"
+         << setw(20) << "K/F/C"
          << "Calories\n";
     cout << string(53, '-') << "\n";
 
@@ -110,6 +110,7 @@ int main() {
         for (const auto& p : found) {
             cout << "Found: " << p.name << " (Calories: " << p.getCalories() << ")\n";
         }
+        cout << "Igor Pidoras" << endl;
     }
     cout << "\n";
 
