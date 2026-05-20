@@ -51,14 +51,12 @@ void printResult(const vector<vector<int>>& allocation, int totalCost, string me
     cout << "\nMinimum total delivery cost: " << totalCost << " currency units.\n";
 }
 
-// Додали параметр для вибору режиму введення
 void solveDynamicTransportProblem(bool useHardcoded) {
     int numWarehouses, numStores;
     vector<int> supply;
     vector<int> demand;
     vector<vector<int>> costs;
 
-    // Режим: Захардкоджені дані з лабораторної
     if (useHardcoded) {
         numWarehouses = 3;
         numStores = 3;
@@ -73,7 +71,6 @@ void solveDynamicTransportProblem(bool useHardcoded) {
         };
         cout << "\n[INFO] Loaded hardcoded data from Lab 21 assignment.\n";
     }
-    // Режим: Ручне введення
     else {
         cout << "Enter the number of real warehouses (S): ";
         numWarehouses = getValidChoice();
@@ -214,10 +211,10 @@ int main() {
 
         switch (choice) {
             case 1:
-                solveDynamicTransportProblem(false); // Виклик з ручним вводом
+                solveDynamicTransportProblem(false); 
                 break;
             case 2:
-                solveDynamicTransportProblem(true);  // Виклик з даними по замовчуванню
+                solveDynamicTransportProblem(true);  
                 break;
             case 0:
                 cout << "Exiting program. Good luck!\n";
