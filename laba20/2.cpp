@@ -11,7 +11,6 @@ struct Activity {
     int end;
 };
 
-// Правило сортування: жадібний алгоритм вимагає сортування за часом закінчення
 bool compareActivities(Activity a, Activity b) {
     return a.end < b.end;
 }
@@ -44,23 +43,19 @@ void scheduleActivities() {
         cout << "Activity " << i + 1 << " end time: ";
         activities[i].end = getValidChoice();
         
-        // Захист від дурня: закінчення не може бути раніше початку
         if (activities[i].end <= activities[i].start) {
             cout << "End time must be after start time. Try again.\n";
             i--; 
         }
     }
 
-    // Крок 1: Сортуємо заняття за часом закінчення
     sort(activities.begin(), activities.end(), compareActivities);
 
     vector<Activity> selectedActivities;
     
-    // Крок 2: Завжди беремо перше заняття (воно закінчується найраніше)
     selectedActivities.push_back(activities[0]);
     int lastEndTime = activities[0].end;
 
-    // Крок 3: Жадібно вибираємо наступні заняття
     for (int i = 1; i < n; i++) {
         if (activities[i].start >= lastEndTime) {
             selectedActivities.push_back(activities[i]);
@@ -68,7 +63,6 @@ void scheduleActivities() {
         }
     }
 
-    // Виведення результату
     cout << "\n=== Optimal Schedule ===\n";
     cout << "Maximum non-overlapping activities: " << selectedActivities.size() << "\n";
     cout << "Selected activities:\n";
